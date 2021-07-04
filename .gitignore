@@ -26,3 +26,6 @@ yarn-debug.log*
 yarn-error.log*
 .vscode/settings.json
 .history
+api/test.db
+api/tmp/test.db
+api/tmp/test.db
