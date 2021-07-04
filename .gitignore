@@ -29,3 +29,5 @@ yarn-error.log*
 api/test.db
 api/tmp/test.db
 api/tmp/test.db
+api/config.py
+src/data.js
