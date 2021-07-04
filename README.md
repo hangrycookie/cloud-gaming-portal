@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Azure Gaming
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contexte
+Projet Azure qui a pour but de créer un Cloud Gaming sur Azure.
 
-## Available Scripts
+#### Consignes
+Le déroulé du projet est le suivant:
+* Le joueur s’identifie sur son portail web
+* Une fois authentifié, si il n’est pas autorisé, il ne peut pas lancer le jeu
+* Si il est autorisé, il a un bouton ou un lien pour lancer le jeu
+* Le lancement du jeu va démarrer une VM sur Azure et y déployer le jeu
+* L’utilisateur peut alors accéder au jeu via une interface.
+* Une fois la partie terminée, ou une fois le joueur déconnecté, ou après un
+timeout définit par avance, la VM est éteinte dans le cloud.
 
-In the project directory, you can run:
+#### Livrable
+Le délivrable est en deux parties:
+* Le site du portail web, ainsi que deux identifiants et mots de passe pour
+pouvoir tester le projet. Un des identifiants ne doit pas permettre l’accès au
+jeu.
+* Un accès au code source du projet, avec sa documentation pour l’installer.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Projet
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Technologies utilisés
+* React => front
+* Flask => API
+* Azure cloud => gestion des VMs
 
-### `npm test`
+#### Décomposition du projet
+Le projet est decomposé en plusieurs parties :
+* le frontend : qui contient l'application 
+* le backend : qui contient l'api
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
+## Project setup
 
-### `npm run build`
+Installation à faire pour démarrer le projet
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Get the project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+git clone https://github.com/dylanbrudey/cloud-gaming-portal.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Project setup (Front) 
 
-### `npm run eject`
+#### Installation
+```
+yarn install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Lancer le front
+```
+yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Project setup (Back) 🛸
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Installation
+```
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Lancement de l'api
+```
+nodemon server.js
+```
+ou 
+```
+node server.js
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Login credentials
+ Les secrets sont destinés uniquement 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## FAQ
 
-### Analyzing the Bundle Size
+1 - Shutdown automatique 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Un shutdown automatique de la vm est realisé à 01:00 chaque jour. Merci de realisé les tests avant ou après cette heure ci.
 
-### Making a Progressive Web App
+2 - Que se passe t-il quand je clique sur play ?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Un premier message indiquant que la machine virtuelle s'allume s'affche.
+Puis un deuxième apparaitra lorsque celle ci sera allumé.
+Et enfin, un dernier message s'affichera avec les identifiants et l'ip de la vm pour se connecter a distance (avec le rdp)
 
-### Advanced Configuration
+3 - Que se passe t-il quand je clique sur stop ?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Un premier message indiquant que la machine virtuelle s'éteins s'affiche.
+Puis un deuxième apparaitra lorsque celle-ci sera éteinte.
