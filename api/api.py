@@ -1,8 +1,6 @@
 import time
 from flask import Flask, g
-from flask.helpers import url_for
 from flask import request
-from flask.wrappers import Response
 from flask_sqlalchemy import SQLAlchemy
 from passlib.apps import custom_app_context as pwd_context
 from flask_httpauth import HTTPBasicAuth

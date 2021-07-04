@@ -1,0 +1,8 @@
+flask
+python-dotenv
+flask_sqlachemy
+passlib.apps
+flask_httpauth
+azure.mgmt.compute
+msrestazure.azure_exceptions
+azure.common.credentials
