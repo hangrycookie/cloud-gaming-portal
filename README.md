@@ -133,4 +133,4 @@ Puis un deuxième apparaitra lorsque celle-ci sera éteinte.
 
 Sur Windows, utiliser la connexion de bureau à distance.
 Sur Mac, installer Microsoft Remote Desktop.
-Afin de se connecter, , ajoutee à l'adresse IP de la VM le port *3389* de la manière suivante XX.XXX.XXX.XX:3389.
+Afin de se connecter, ajoutez à l'adresse IP de la VM le port *3389* de la manière suivante XX.XXX.XXX.XX:3389.
