@@ -118,13 +118,13 @@ yarn start-api
 
 Un shutdown automatique de la vm est realisé à 01:00 chaque jour. Merci de realisé les tests avant ou après cette heure ci.
 
-2 - Que se passe t-il quand je clique sur play ?
+2 - Que se passe t-il quand je clique sur *Play* ?
 
 Un premier message indiquant que la machine virtuelle s'allume s'affiche.
 Puis un deuxième apparaitra lorsque celle-ci sera allumée.
 Et enfin, un dernier message s'affichera avec les identifiants et l'ip de la vm pour se connecter a distance (avec le rdp)
 
-3 - Que se passe t-il quand je clique sur stop ?
+3 - Que se passe t-il quand je clique sur *Stop* ?
 
 Un premier message indiquant que la machine virtuelle s'éteint s'affiche.
 Puis un deuxième apparaitra lorsque celle-ci sera éteinte.
