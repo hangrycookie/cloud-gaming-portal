@@ -25,7 +25,7 @@ jeu.
 ## Projet
 
 #### Technologies utilisés
-* React => front
+* React => frontend
 * Flask => API
 * Azure cloud => gestion des VMs
 
@@ -45,39 +45,68 @@ Installation à faire pour démarrer le projet
 git clone https://github.com/dylanbrudey/cloud-gaming-portal.git
 ```
 
-### Project setup (Front) 
+### Project setup (Frontend) 
 
 #### Installation
 ```
 yarn install
 ```
+##### Ajout du secret
+
+Placer *data.js* dans le dossier *src*
 
 #### Lancer le front
 ```
 yarn start
 ```
 
-### Project setup (Back) 🛸
+### Project setup (Backend)
 
 #### Installation
+
+##### Création d'un environnement virtuel
+
+###### Windows
 ```
-npm install
+python -m venv ./api/venv
 ```
+###### Unix
+```
+python3 -m venv ./api/venv
+```
+##### Lancement de l'environnement virtuel
+
+###### Windows
+```
+.\api\venv\Scripts\activate
+```
+###### Unix
+```
+source api/venv/bin/activate
+```
+##### Installation des dépendances
+###### Windows
+```
+pip install .\api\requirements.txt
+```
+###### Unix
+```
+pip3 install ./api/requirements.txt
+```
+
+##### Ajout du secret
+
+Placer *config.py* dans le dossier *api*
 
 #### Lancement de l'api
 ```
-nodemon server.js
-```
-ou 
-```
-node server.js
+yarn start-api
 ```
 
 ---
 
 ## Login credentials
- Les secrets sont destinés uniquement 
-
+ Les secrets seront communiqués via une autre plateforme.
 
 ---
 
@@ -89,11 +118,11 @@ Un shutdown automatique de la vm est realisé à 01:00 chaque jour. Merci de rea
 
 2 - Que se passe t-il quand je clique sur play ?
 
-Un premier message indiquant que la machine virtuelle s'allume s'affche.
-Puis un deuxième apparaitra lorsque celle ci sera allumé.
+Un premier message indiquant que la machine virtuelle s'allume s'affiche.
+Puis un deuxième apparaitra lorsque celle-ci sera allumée.
 Et enfin, un dernier message s'affichera avec les identifiants et l'ip de la vm pour se connecter a distance (avec le rdp)
 
 3 - Que se passe t-il quand je clique sur stop ?
 
-Un premier message indiquant que la machine virtuelle s'éteins s'affiche.
+Un premier message indiquant que la machine virtuelle s'éteint s'affiche.
 Puis un deuxième apparaitra lorsque celle-ci sera éteinte.
