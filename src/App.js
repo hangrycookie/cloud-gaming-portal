@@ -20,18 +20,18 @@ function App() {
     });
   }, []);
 
-  const addUser = () => {
-    fetch('/api/users', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({'username': user.current.value, 'password': password.current.value, 'access': true})
-    }).then(res => res.json()).then(data => {
-      console.log(data)
-    });
-  }
+  // const addUser = () => {
+  //   fetch('/api/users', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Accept': 'application/json',
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({'username': user.current.value, 'password': password.current.value, 'access': true})
+  //   }).then(res => res.json()).then(data => {
+  //     console.log(data)
+  //   });
+  // }
 
   const checkUser = () => {
     fetch('/api/resource', {
@@ -65,7 +65,7 @@ function App() {
           <input id='user' ref={user} className='form-control' type='text' />
           <label className=' text-dark' for='user'>Password</label>
           <input ref={password} className='form-control' type='password' />
-          <button type='button' className='btn btn-primary' onClick={addUser}>Add User</button>
+          {/* <button type='button' className='btn btn-primary' onClick={addUser}>Add User</button> */}
           <button type='button' className='btn btn-danger' onClick={checkUser}>Verify User</button>
         </div>
         {
