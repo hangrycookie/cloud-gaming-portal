@@ -3,8 +3,19 @@
 import traceback
 
 from azure.mgmt.compute import ComputeManagementClient
+from azure.identity import ClientSecretCredential
 from msrestazure.azure_exceptions import CloudError
-from config import get_credentials, GROUP_NAME, VM_NAME
+from config import get_credentials, GROUP_NAME, VM_NAME, SUBSCRIPTION_ID, TENANT_ID, CLIENT_ID, CLIENT_SECRET
+
+
+def get_credentials():
+    subscription_id = SUBSCRIPTION_ID
+    credentials = ClientSecretCredential(
+        tenant_id=TENANT_ID,
+        client_id=CLIENT_ID,
+        client_secret=CLIENT_SECRET
+    )
+    return credentials, subscription_id
 
 
 def start_vm(vm_number):
