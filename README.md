@@ -126,3 +126,9 @@ Et enfin, un dernier message s'affichera avec les identifiants et l'ip de la vm 
 
 Un premier message indiquant que la machine virtuelle s'éteint s'affiche.
 Puis un deuxième apparaitra lorsque celle-ci sera éteinte.
+
+4 - Comment se connecter en RDP ?
+
+Sur Windows, utiliser la connexion de bureau à distance.
+Sur Mac, installer Microsoft Remote Desktop.
+Afin de se connecter, , ajoutee à l'adresse IP de la VM le port *3389* de la manière suivante XX.XXX.XXX.XX:3389.
