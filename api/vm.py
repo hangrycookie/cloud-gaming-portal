@@ -5,7 +5,7 @@ import traceback
 from azure.mgmt.compute import ComputeManagementClient
 from azure.identity import ClientSecretCredential
 from msrestazure.azure_exceptions import CloudError
-from config import get_credentials, GROUP_NAME, VM_NAME, SUBSCRIPTION_ID, TENANT_ID, CLIENT_ID, CLIENT_SECRET
+from config import GROUP_NAME, VM_NAME, SUBSCRIPTION_ID, TENANT_ID, CLIENT_ID, CLIENT_SECRET
 
 
 def get_credentials():
