@@ -25,7 +25,7 @@ def start_vm(vm_number):
 
         # Start the VM
         print('\nStart VM')
-        async_vm_start = compute_client.virtual_machines.start(
+        async_vm_start = compute_client.virtual_machines.begin_start(
             GROUP_NAME, VM_NAME[vm_number])
         async_vm_start.wait()
 
@@ -58,12 +58,12 @@ def stop_vm(vm_number):
         # Stop the VM
 
         print('\nStop VM')
-        async_vm_stop = compute_client.virtual_machines.power_off(
+        async_vm_stop = compute_client.virtual_machines.begin_power_off(
             GROUP_NAME, VM_NAME[vm_number])
         async_vm_stop.wait()
 
         print('\nDeallocate VM')
-        async_vm_deallocate = compute_client.virtual_machines.deallocate(
+        async_vm_deallocate = compute_client.virtual_machines.begin_deallocate(
             GROUP_NAME, VM_NAME[vm_number])
         async_vm_deallocate.wait()
 
