@@ -107,6 +107,7 @@ yarn start-api
 
 ## Login credentials
  Les secrets seront communiqués via une autre plateforme.
+ Vous trouverez les identifiants d'autentification aux jeux du portail dans *identifiants_portail.txt*
 
 ---
 
