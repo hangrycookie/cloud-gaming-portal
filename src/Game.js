@@ -41,6 +41,7 @@ function Game(props) {
                     <span>{`IP VM : ${vmIp}`}</span>
                     <span>{`USER: ${user}`}</span>
                     <span>{`PASSWORD: ${password}`}</span>
+                    <span>Don't forget to add the port 3389 to the IP !</span>
                 </div>
             </div>
         </div>
